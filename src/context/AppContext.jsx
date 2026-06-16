@@ -4,12 +4,12 @@ const AppContext = createContext(null);
 
 export function AppProvider({ children }) {
   const [screen, setScreen] = useState('welcome');
-  const [userData, setUserData] = useState({ fullName: '', email: '' });
+  const [userData, setUserData] = useState({ fullName: '', email: '', phone: '', company: '', agency: 'yes' });
 
   const navigate = (screenName) => setScreen(screenName);
 
   const saveUser = (data) => {
-    setUserData(data);
+    setUserData((prev) => ({ ...prev, ...data }));
   };
 
   return (

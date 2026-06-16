@@ -95,7 +95,7 @@ export default function CreateAccountPage() {
     setTouched(allTouched);
     setErrors(newErrors);
     if (!hasErrors(newErrors)) {
-      saveUser({ fullName: form.fullName, email: form.email });
+      saveUser({ fullName: form.fullName, email: form.email, phone: form.phone, company: form.company, agency: form.agency });
       navigate('settings');
     }
   };

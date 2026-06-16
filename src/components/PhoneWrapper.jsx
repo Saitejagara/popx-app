@@ -8,7 +8,7 @@ const styles = {
   },
   phone: {
     width: 375,
-    minHeight: 667,
+    height: '667px',
     background: '#fff',
     borderRadius: 16,
     boxShadow: '0 8px 40px rgba(0,0,0,0.18)',

@@ -1,5 +1,6 @@
 import { useApp } from '../context/AppContext';
 import { COLORS } from '../styles/theme';
+import Button from '../components/Button';
 
 const styles = {
   page: {
@@ -18,6 +19,7 @@ const styles = {
   },
   card: {
     background: COLORS.white,
+    boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
   },
   profileRow: {
     display: 'flex',
@@ -61,12 +63,12 @@ const styles = {
     fontWeight: 700,
     fontSize: 16,
     color: COLORS.textPrimary,
-    margin: '0 0 2px',
+    margin: '8px 0 2px',
   },
   email: {
     fontSize: 13,
     color: COLORS.textLabel,
-    margin: 0,
+    margin: '0 0 0',
   },
   bio: {
     fontSize: 13,
@@ -101,8 +103,8 @@ function CameraIcon() {
 
 export default function AccountSettingsPage() {
   const { userData } = useApp();
-  const { fullName, email } = userData;
-  const initial = fullName ? fullName.charAt(0).toUpperCase() : 'U';
+  const { fullName, email, company, phone, agency } = userData;
+  const initial = fullName ? fullName.charAt(0).toUpperCase() : (company ? company.charAt(0).toUpperCase() : 'U');
 
   return (
     <div style={styles.page}>
@@ -122,8 +124,11 @@ export default function AccountSettingsPage() {
         </div>
 
         <p style={styles.bio}>
-          Lorem Ipsum Dolor Sit Amet, Consetetur Sadipscing Elitr, Sed Diam Nonumy
-          Eirmod Tempor Invidunt Ut Labore Et Dolore Magna Aliquyam Erat, Sed Diam
+          {company ? (
+            `${company} is a trusted partner delivering innovative solutions to help creators and brands grow. We provide marketing tools, analytics, and community engagement features tailored to your business needs.`
+          ) : (
+            'No company information provided. Update your company details to show profile information here.'
+          )}
         </p>
 
         <div style={styles.divider} />
