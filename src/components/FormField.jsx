@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { COLORS } from '../styles/theme';
 
 const styles = {
@@ -44,19 +43,6 @@ const styles = {
     marginTop: 4,
     marginLeft: 2,
   },
-  eyeButton: {
-    position: 'absolute',
-    top: '50%',
-    right: 12,
-    transform: 'translateY(-50%)',
-    background: 'transparent',
-    border: 'none',
-    cursor: 'pointer',
-    padding: 6,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
 };
 
 export default function FormField({
@@ -71,7 +57,6 @@ export default function FormField({
   inputMode,
   maxLength,
 }) {
-  const [visible, setVisible] = useState(false);
   const labelNodes = label
     ? label.split('*').flatMap((part, index, array) =>
         index < array.length - 1
@@ -84,12 +69,8 @@ export default function FormField({
     <div style={styles.wrap}>
       <span style={styles.label}>{labelNodes}</span>
       <input
-        style={{
-          ...styles.input,
-          ...(hasError ? styles.inputError : {}),
-          ...(type === 'password' ? { paddingRight: 44 } : {}),
-        }}
-        type={type === 'password' && visible ? 'text' : type}
+        style={{ ...styles.input, ...(hasError ? styles.inputError : {}) }}
+        type={type}
         placeholder={placeholder}
         value={value}
         onChange={onChange}
@@ -98,26 +79,6 @@ export default function FormField({
         maxLength={maxLength}
         autoComplete="off"
       />
-      {type === 'password' && (
-        <button
-          type="button"
-          aria-label={visible ? 'Hide password' : 'Show password'}
-          onClick={() => setVisible((v) => !v)}
-          style={styles.eyeButton}
-        >
-          {visible ? (
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-              <path d="M17.94 17.94A10.94 10.94 0 0112 20c-5.05 0-9.3-3.14-11-7.5C2.7 8.14 6.95 5 12 5c2.35 0 4.5.66 6.32 1.8" stroke={COLORS.purple} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              <path d="M1 1l22 22" stroke={COLORS.purple} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          ) : (
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-              <path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6S2.5 12 2.5 12z" stroke={COLORS.purple} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              <circle cx="12" cy="12" r="2" stroke={COLORS.purple} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          )}
-        </button>
-      )}
       {hasError && errorMsg && (
         <div style={styles.errorMsg}>⚠ {errorMsg}</div>
       )}

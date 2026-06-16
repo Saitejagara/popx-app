@@ -9,7 +9,6 @@ const styles = {
     flexDirection: 'column',
     justifyContent: 'space-between',
     padding: '40px 28px 48px',
-    height: '100%',
     background: COLORS.white,
   },
   title: {
@@ -28,14 +27,12 @@ const styles = {
   content: {
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'flex-start',
-    textAlign: 'left',
+    alignItems: 'center',
+    textAlign: 'center',
     gap: 12,
     width: '100%',
     maxWidth: 400,
-    alignSelf: 'stretch',
-    paddingLeft: 28,
-    paddingRight: 28,
+    alignSelf: 'center',
   },
 };
 
@@ -44,7 +41,7 @@ export default function WelcomePage() {
 
   return (
     <div style={styles.screen}>
-      <div style={{ flex: 6 }} />
+      <div style={{ flex: 3 }} />
       <div style={styles.content}>
         <h1 style={styles.title}>Welcome to PopX</h1>
         <p style={styles.subtitle}>
