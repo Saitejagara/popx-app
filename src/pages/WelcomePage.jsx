@@ -34,7 +34,7 @@ export default function WelcomePage() {
       <div style={{ flex: 1 }} />
       <h1 style={styles.title}>Welcome to PopX</h1>
       <p style={styles.subtitle}>
-        Lorem ipsum dolor sit amet,<br />consectetur adipiscing elit,
+  Connect with your favorite brands,<br />creators, and communities — all in one place.
       </p>
       <Button label="Create Account" variant="primary" onClick={() => navigate('create')} />
       <Button label="Already Registered? Login" variant="secondary" onClick={() => navigate('login')} />
