@@ -12,28 +12,31 @@ const styles = {
     background: COLORS.white,
   },
   title: {
-    fontSize: 26,
-    fontWeight: 700,
+    fontSize: 30,
+    fontWeight: 800,
     color: COLORS.textPrimary,
-    margin: '0 0 10px',
+    margin: '0 0 12px',
     lineHeight: 1.25,
   },
   subtitle: {
-    fontSize: 14,
+    fontSize: 15,
     color: COLORS.textSecondary,
-    margin: '0 0 32px',
+    margin: '0 0 24px',
     lineHeight: 1.6,
+    maxWidth: 320,
   },
   center: {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-end',
     flex: 1,
     textAlign: 'center',
+    paddingBottom: 96,
   },
   buttons: {
     width: '100%',
+    paddingBottom: 8,
   },
 };
 
