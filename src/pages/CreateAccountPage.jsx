@@ -133,7 +133,7 @@ export default function CreateAccountPage() {
       <FormField
         label="Email address*"
         type="email"
-        placeholder="example@gmail.com"
+        placeholder="you@example.com"
         value={form.email}
         onChange={(e) => handleChange('email', e.target.value)}
         onBlur={() => handleBlur('email')}

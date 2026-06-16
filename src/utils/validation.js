@@ -2,7 +2,8 @@ export function validateField(field, value) {
   switch (field) {
     case 'fullName':
       if (value.trim() === '') return 'Full name is required';
-      if (!/^[A-Za-z\s]+$/.test(value.trim())) return 'Full name must contain letters only';
+      if (!/^[A-Za-z0-9\s'\-.]+$/.test(value.trim()))
+        return "Full name may contain letters, numbers, spaces, apostrophes, hyphens, or periods";
       return '';
 
     case 'phone':

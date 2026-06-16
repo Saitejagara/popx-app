@@ -49,8 +49,8 @@ npm run preview
 ## Validation Rules
 
 - **Phone**: digits only, exactly 10 digits
-- **Email**: must end with `@gmail.com`
-- **Full Name & Password**: required fields
+ - **Email**: valid email address
+ - **Full Name & Password**: required fields
 
 ## Deploy
 
