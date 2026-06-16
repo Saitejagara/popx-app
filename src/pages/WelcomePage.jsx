@@ -7,44 +7,22 @@ const styles = {
     flex: 1,
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-between',
-    position: 'relative',
+    justifyContent: 'flex-end',
     padding: '40px 28px 48px',
     background: COLORS.white,
   },
   title: {
-    fontSize: 30,
-    fontWeight: 800,
+    fontSize: 26,
+    fontWeight: 700,
     color: COLORS.textPrimary,
-    margin: '0 0 8px',
+    margin: '0 0 10px',
     lineHeight: 1.25,
   },
   subtitle: {
-    fontSize: 15,
+    fontSize: 14,
     color: COLORS.textSecondary,
-    margin: '0 0 12px',
+    margin: '0 0 32px',
     lineHeight: 1.6,
-    maxWidth: 320,
-  },
-  center: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'flex-start',
-    justifyContent: 'flex-end',
-    flex: 1,
-    textAlign: 'left',
-    paddingBottom: 96,
-    paddingLeft: 28,
-    paddingRight: 28,
-  },
-  buttons: {
-    position: 'absolute',
-    left: 28,
-    right: 28,
-    bottom: 32,
-    display: 'flex',
-    flexDirection: 'column',
-    gap: 12,
   },
 };
 
@@ -53,17 +31,13 @@ export default function WelcomePage() {
 
   return (
     <div style={styles.screen}>
-      <div style={styles.center}>
-        <h1 style={styles.title}>Welcome to PopX</h1>
-        <p style={styles.subtitle}>
-          Create your account and enjoy a secure and personalized experience.
-          <br />Get started by creating an account or logging in.
-        </p>
-      </div>
-      <div style={styles.buttons}>
-        <Button label="Create Account" variant="primary" onClick={() => navigate('create')} />
-        <Button label="Already Registered? Login" variant="secondary" onClick={() => navigate('login')} />
-      </div>
+      <div style={{ flex: 1 }} />
+      <h1 style={styles.title}>Welcome to PopX</h1>
+      <p style={styles.subtitle}>
+        Lorem ipsum dolor sit amet,<br />consectetur adipiscing elit,
+      </p>
+      <Button label="Create Account" variant="primary" onClick={() => navigate('create')} />
+      <Button label="Already Registered? Login" variant="secondary" onClick={() => navigate('login')} />
     </div>
   );
 }
