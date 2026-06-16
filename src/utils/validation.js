@@ -1,7 +1,9 @@
 export function validateField(field, value) {
   switch (field) {
     case 'fullName':
-      return value.trim() === '' ? 'Full name is required' : '';
+      if (value.trim() === '') return 'Full name is required';
+      if (!/^[A-Za-z\s]+$/.test(value.trim())) return 'Full name must contain letters only';
+      return '';
 
     case 'phone':
       if (value === '') return 'Phone number is required';
@@ -11,8 +13,7 @@ export function validateField(field, value) {
 
     case 'email':
       if (value === '') return 'Email address is required';
-      if (value === '@gmail.com') return 'Please enter a valid Gmail address';
-      if (!value.endsWith('@gmail.com')) return 'Email must end with @gmail.com';
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) return 'Please enter a valid email address';
       return '';
 
     case 'password':

@@ -26,6 +26,14 @@ const styles = {
     color: COLORS.textPrimary,
     margin: '4px 0 8px',
     fontWeight: 500,
+    display: 'inline-flex',
+    alignItems: 'center',
+    gap: 4,
+  },
+  requiredMark: {
+    color: COLORS.error,
+    fontSize: 13,
+    lineHeight: 1,
   },
   radioRow: {
     display: 'flex',
@@ -152,7 +160,10 @@ export default function CreateAccountPage() {
         onChange={(e) => handleChange('company', e.target.value)}
       />
 
-      <p style={styles.agencyLabel}>Are you an Agency?*</p>
+      <p style={styles.agencyLabel}>
+        Are you an Agency?
+        <span style={styles.requiredMark}>*</span>
+      </p>
       <div style={styles.radioRow}>
         <label style={styles.radioLabel}>
           <input

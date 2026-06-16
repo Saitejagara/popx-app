@@ -18,7 +18,9 @@ export default function App() {
 
   return (
     <PhoneWrapper>
-      <CurrentScreen />
+      <div key={screen} className="screen-transition">
+        <CurrentScreen />
+      </div>
     </PhoneWrapper>
   );
 }

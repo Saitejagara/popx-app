@@ -16,6 +16,14 @@ const styles = {
     fontWeight: 600,
     zIndex: 1,
     pointerEvents: 'none',
+    display: 'inline-flex',
+    alignItems: 'center',
+    gap: 2,
+  },
+  requiredMark: {
+    color: COLORS.error,
+    fontSize: 14,
+    lineHeight: 1,
   },
   input: {
     width: '100%',
@@ -52,9 +60,17 @@ export default function FormField({
   inputMode,
   maxLength,
 }) {
+  const labelNodes = label
+    ? label.split('*').flatMap((part, index, array) =>
+        index < array.length - 1
+          ? [part, <span key={index} style={styles.requiredMark}>*</span>]
+          : [part]
+      )
+    : null;
+
   return (
     <div style={styles.wrap}>
-      <span style={styles.label}>{label}</span>
+      <span style={styles.label}>{labelNodes}</span>
       <input
         style={{ ...styles.input, ...(hasError ? styles.inputError : {}) }}
         type={type}
