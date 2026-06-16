@@ -16,14 +16,6 @@ const styles = {
     fontWeight: 600,
     zIndex: 1,
     pointerEvents: 'none',
-    display: 'inline-flex',
-    alignItems: 'center',
-    gap: 2,
-  },
-  requiredMark: {
-    color: COLORS.error,
-    fontSize: 14,
-    lineHeight: 1,
   },
   input: {
     width: '100%',
