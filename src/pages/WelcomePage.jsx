@@ -7,7 +7,7 @@ const styles = {
     flex: 1,
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'flex-end',
+    justifyContent: 'space-between',
     padding: '40px 28px 48px',
     background: COLORS.white,
   },
@@ -24,6 +24,17 @@ const styles = {
     margin: '0 0 32px',
     lineHeight: 1.6,
   },
+  center: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flex: 1,
+    textAlign: 'center',
+  },
+  buttons: {
+    width: '100%',
+  },
 };
 
 export default function WelcomePage() {
@@ -31,13 +42,17 @@ export default function WelcomePage() {
 
   return (
     <div style={styles.screen}>
-      <div style={{ flex: 1 }} />
-      <h1 style={styles.title}>Welcome to PopX</h1>
-      <p style={styles.subtitle}>
-        Lorem ipsum dolor sit amet,<br />consectetur adipiscing elit,
-      </p>
-      <Button label="Create Account" variant="primary" onClick={() => navigate('create')} />
-      <Button label="Already Registered? Login" variant="secondary" onClick={() => navigate('login')} />
+      <div style={styles.center}>
+        <h1 style={styles.title}>Welcome to PopX</h1>
+        <p style={styles.subtitle}>
+          Create your account and enjoy a secure and personalized experience.
+          <br />Get started by creating an account or logging in.
+        </p>
+      </div>
+      <div style={styles.buttons}>
+        <Button label="Create Account" variant="primary" onClick={() => navigate('create')} />
+        <Button label="Already Registered? Login" variant="secondary" onClick={() => navigate('login')} />
+      </div>
     </div>
   );
 }
